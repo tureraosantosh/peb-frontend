@@ -1,0 +1,80 @@
+<div class="login-container">
+
+    <div class="brand-section">
+        <div class="brand-content">
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <app-icon name="monitor_heart" [size]="20" color="blue"></app-icon>
+                    <span>NexHealth</span>
+                </div>
+            </div>
+
+            <div class="headline">
+                <h1>
+                    Smarter Prior Authorization. Accurate Benefits.<br>
+                    <span class="highlight-green">Better Patient Care.</span>
+                </h1>
+            </div>
+
+            <p class="description-text">
+                Eliminate administrative friction and accelerate revenue cycles. Our AI-driven platform empowers
+                providers to
+                focus on what matters most — exceptional patient outcomes.
+            </p>
+
+            <!-- Feature grid 2x2 with icons -->
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon"><app-icon name="description"></app-icon></div>
+                    <div class="feature-text">
+                        <h4>Prior Authorization</h4>
+                        <p>Automated submissions & real-time status tracking.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><app-icon name="task_alt"></app-icon></div>
+                    <div class="feature-text">
+                        <h4>Benefits Verification</h4>
+                        <p>Instant insurance coverage & patient responsibility.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><app-icon name="assignment"></app-icon></div>
+                    <div class="feature-text">
+                        <h4>Eligibility Checks</h4>
+                        <p>Batch or real-time eligibility at check-in.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><app-icon name="show_chart"></app-icon></div>
+                    <div class="feature-text">
+                        <h4>Actionable Insights</h4>
+                        <p>Analytics to optimize workflow & revenue.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HIPAA badge at bottom -->
+            <div class="hipaa-badge">
+                <app-icon name="shield" [size]="16" color="green"></app-icon>
+                <span>HIPAA Compliant • SOC 2 Type II</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT SECTION: Login Form Card -->
+    <div class="form-section">
+
+        <!-- add router outlet -->
+        <router-outlet></router-outlet>
+
+        <!-- Footer with help center, user guides, security -->
+        <div class="form-footer">
+            <a href="#">Help center</a>
+            <a href="#">User guides</a>
+            <a href="#">Security info</a>
+        </div>
+
+    </div>
+
+</div>

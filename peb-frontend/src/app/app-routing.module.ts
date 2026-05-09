@@ -1,9 +1,19 @@
-import {NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { tsInputComponent } from './shared/compoents/ts-input/ts-input.component';
 
 const routes: Routes = [
-  {path:'',component:tsInputComponent}
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./core/auth/auth.module').then(m => m.AuthModule)
+  },
+
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./features/dashboard/dashboard.module').then(m => m.DashboardModule)
+  }
+
 ];
 
 @NgModule({

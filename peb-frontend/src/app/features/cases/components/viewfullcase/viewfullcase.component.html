@@ -1,0 +1,60 @@
+<!-- parent.component.html -->
+
+<div class="main-container">
+
+    <app-card class="physician-card-wrapper" *ngFor="let section of caseSections let i=index; trackBy:trackBySection">
+
+        <!-- HEADER -->
+        <div class="physician-header">
+            <div class="header-left">
+                <app-icon color="'green'" [name]="'section.icon'"></app-icon>
+                <span>{{ section.title | uppercase }}</span>
+            </div>
+        </div>
+
+        <!-- BODY -->
+        <div class="physician-body">
+
+            <!-- NORMAL FORM FIELDS -->
+            <div class="form-grid" *ngIf="section.fields" [ngStyle]="{
+                    'grid-template-columns':
+                    section.gridStyle ? section.gridStyle : '1fr 1fr 1fr'
+                }">
+
+                <div class="field-block" *ngFor="let field of section.fields">
+
+                    <label>{{ field.label }}</label>
+                    <mat-form-field appearance="outline" class="custom-field">
+                        <input matInput [value]="field.value">
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <!-- Optional Button -->
+            <app-button (onClick)="addNewCard(i)" [label]="section.buttonText" *ngIf="section.buttonText"
+                [color]="'green'">
+
+            </app-button>
+            <!-- FILE SECTION -->
+            <div class="upload-wrapper" *ngIf="section.file">
+
+                <div class="upload-box">
+
+                    <mat-icon>upload_file</mat-icon>
+
+                    <h4>{{ section.file.fileName }}</h4>
+
+                    <p>{{ section.file.uploadedTime }}</p>
+
+                    <span>{{ section.uploadText }}</span>
+
+                    <input type="file">
+
+                </div>
+
+            </div>
+
+        </div>
+    </app-card>
+</div>

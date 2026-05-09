@@ -1,0 +1,21 @@
+<app-card title="User Profile" subtitle="Frontend Developer"
+    content="This is a reusable Angular Material card component." buttonText="View More">
+
+    <form [formGroup]="form" class="form-layout">
+        <div class="form-grid">
+            <ng-container *ngFor="let field of formConfig">
+                <!-- Input -->
+                <app-input *ngIf="field.type" [label]="field.label" layout="column" [control]="getControl(field.key)">
+                </app-input>
+            </ng-container>
+
+        </div> <!-- 👈 END GRID -->
+
+        <!-- Buttons -->
+        <div class="button-row">
+            <app-button label="Save" color="primary" icon="save" (onClick)="submit()">
+            </app-button>
+
+        </div>
+    </form>
+</app-card>
