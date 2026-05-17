@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --primary-blue: #4a59bd;
+    --success-green: #ffffff;
+    --bg-light: #f4f6f8;
+    --danger-pink: #f43f5e;
+    --text-dark: #333;
+    --text-light: #666;
+    --bg-light-green: #d1e6d6;
+    --white: #ffffff;
+    --bg-light-aqua-green: #cef3e0;
+    --bg-sidebar-icon: #0f766e;
+    --bg-button-green: #0f766e;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+
+}

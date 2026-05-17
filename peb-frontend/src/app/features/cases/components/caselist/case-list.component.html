@@ -1,0 +1,104 @@
+<h2 class="title">LIST OF CURRENT CASES</h2>
+<!-- Tabs + Button -->
+<div class="top-bar">
+    <div class="tabs">
+        <span class="active-tab">Active Cases (Current)</span>
+        <span>Completed</span>
+    </div>
+    <button class="new-case-btn">+ NEW CASE</button>
+</div>
+<!-- Filter  part -->
+<div class="filter-bar">
+    <!-- <button class="filter-btn">Advanced Filters (Multi-select)</button> -->
+    <app-filter></app-filter>
+    <span class="count-text">Showing 1-3 of 50 cases</span>
+</div>
+<!-- Table part -->
+<div class="table">
+    <app-table [rowData]="rowData" [columnDefs]="columnDefs" (cellClicked)="onCellClicked($event)"
+        (rowClicked)="onRowClicked($event)">
+    </app-table>
+</div>
+<!-- modal part -->
+<app-modal [(isOpen)]="isModalOpen" title="Case Review">
+    <!-- Your content -->
+    <h3>Case ID: {{ selectedCaseId }}</h3>
+    <!-- Top Alert -->
+    <div class="alert">
+        <span class="badge">CANCELED</span>
+        <span class="reason">
+            <b>Reason:</b> This issue is related to the cancel case functionality and appears to be the same as an
+            already
+            existing ticket logged earlier. To avoid duplicate tracking and maintain updates in a single place.
+        </span>
+    </div>
+    <!-- Action Buttons -->
+    <div class="actions">
+        <app-button *ngFor="let btn of buttons" [label]="btn.label" [icon]="btn.icon" [color]="btn.color"
+            (onClick)="handleButtonClicks(btn.label)">
+        </app-button>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+        <span class="tab active">📄 Case Summary</span>
+        <span class="tab">✉ Messages</span>
+        <span class="tab">☁ Upload Clinicals</span>
+    </div>
+    <!-- Info Grid -->
+    <div class="info-grid">
+        <div class="item">
+            <label>PATIENT NAME</label>
+            <p>PAUL WEYRAUCH</p>
+        </div>
+        <div class="item">
+            <label>PHYSICIAN NAME</label>
+            <p>JANE AANESTAD</p>
+        </div>
+        <div class="item">
+            <label>TRANSACTION ID</label>
+            <p>PAEB_2700000</p>
+        </div>
+        <div class="item">
+            <label>PRODUCT TYPE</label>
+            <p>Prior Authorization Verification</p>
+        </div>
+        <div class="item">
+            <label>SERVICE START DATE</label>
+            <p>10/6/2019 <br> 12:00:00 AM</p>
+        </div>
+        <div class="item">
+            <label>CREATED ON</label>
+            <p>3/23/2026 <br> 6:34:50 AM</p>
+        </div>
+        <div class="item">
+            <label>DATE OF BIRTH</label>
+            <p>09/06/1984</p>
+        </div>
+        <div class="item">
+            <label>CASE ID</label>
+            <p>tspl-99201</p>
+        </div>
+    </div>
+    <!-- Active Requests -->
+    <div class="section-title">Active Requests</div>
+    <div class="info-grid small">
+        <div class="item">
+            <label>PAYER NAME</label>
+            <p>AETNA</p>
+        </div>
+        <div class="item">
+            <label>PAYER TYPE</label>
+            <p>PRIMARY</p>
+        </div>
+    </div>
+    <!-- Bottom Box -->
+    <div class="footer-box">
+        ⚗ 5 - Diagnostic Lab
+    </div>
+    <!-- Footer (optional) -->
+    <div modal-footer>
+        <button (click)="isModalOpen=false">Close</button>
+        <button>Save</button>
+    </div>
+</app-modal>
